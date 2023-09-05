@@ -1,14 +1,17 @@
 const express =require("express")
 const app =express()
+// ejs = embeded js
+app.set(("view engine","ejs"))  // ejs ma garna lachu vanera dekhaune for pug side ma "pug"
 
 app.get('/',(req,res) =>{
-res.send("hello world")
-// if / hamyo vane hello world aucha
+// res.send("hello world")
+res.render("home.ejs") // views vitra ko file render garcha
+
 
 })
 
 app.get('/about',(req,res)=>{
-    res.send("this is about page")
+    res.render("about.ejs")
 })
 
 app.get('/contact',(req,res)=>{
